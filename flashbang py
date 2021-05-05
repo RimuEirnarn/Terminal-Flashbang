@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ ! "`which termux-brightness`" ]; then
+    pkg install termux-api
+    echo "And, you may install Termux-API on Play Store or F-Droid \n(depending on where you downloaded Termux)"
+    exit 1
+fi
+
+minimal_brightness=70
+maximum_brightness=255
+
+# Need to update soon.
+# And with no python-related stuff here!
