@@ -29,7 +29,7 @@ def bang(level):
     if level == 1:
         code = ((u"\033[7m ")*collums+"\n")*lines
     if level == 2:
-        code = ((u"\033[107 ")*collums+"\n")*lines
+        code = ((u"\033[107m ")*collums+"\n")*lines
     if level == 3:
         code = ((u"\033[47m ")*collums+"\n")*lines
     if level == 4:
