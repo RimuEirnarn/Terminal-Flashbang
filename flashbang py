@@ -1,0 +1,60 @@
+#!/data/data/com.termux/files/usr/bin/python3
+
+from os import get_terminal_size, system
+from time import sleep
+maximum_brightness = 255
+current = 70 # Assume it
+
+def clear():
+    system("clear") # Reducing what is produced
+    lines, collums = get_terminal_size()
+    print((u"\033[0m "*collums)+"\n")*lines, end="")
+    system("clear") # Reducing stuff after recleaned.
+
+def warn():
+    print(u"\033[33mWarning\033[0m: This may hurt your eyes!")
+    bang_in = 3 # 3 Seconds
+    while bang_in != 0:
+        print(f"\rYou will be flashbanged in {bang_in}", end="", flush=True)
+        sleep(1)
+        bang_in -= 1
+    clear()
+
+def bang(level):
+    lines, collums = get_terminal_size()
+    if level == 0:
+       code = ""
+       system(f"termux-brightness {maximum_brightness}")
+    if level == 1:
+        code = ((u"\033[7m ")*collums+"\n")*lines
+    if level == 2:
+        code = ((u"\033[107 ")*collums+"\n")*lines
+    if level == 3:
+        code = ((u"\033[47m ")*collums+"\n")*lines
+    if level == 4:
+        code = ""
+        system(f"termux-brightness {current}")
+        clear()
+    return code
+
+def do(level):
+    clear()
+    print(bang(level), end="")
+    sleep(0.5)
+
+warn()
+
+#Preparation
+do(0)
+
+# Bang Step 1
+do(1)
+
+# Bang Step 2
+do(2)
+
+# Bang Step 3
+do(3)
+
+# Clear or Done
+do(4)
