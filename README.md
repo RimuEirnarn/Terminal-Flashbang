@@ -1,7 +1,7 @@
 # Terminal-Flashbang
 You should not use this repo for the sake of your eyes. i've warned you.
 
-And also, don't take this seriously. Because it's all is a joke.
+And also, don't take this seriously. Because it is a joke.
 
 ## Installation
 The installation is easy. You just need Termux and Termux-API installed. And you can choose one of these files.
