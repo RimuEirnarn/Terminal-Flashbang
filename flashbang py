@@ -4,11 +4,12 @@ from os import get_terminal_size, system
 from time import sleep
 maximum_brightness = 255
 current = 70 # Assume it
+default = ()
 
 def clear():
     system("clear") # Reducing what is produced
     lines, collums = get_terminal_size()
-    print((u"\033[0m "*collums)+"\n")*lines, end="")
+    print(((u"\033[0m "*collums)+"\n")*lines, end="")
     system("clear") # Reducing stuff after recleaned.
 
 def warn():
